@@ -1,0 +1,49 @@
+/*
+ Using custom variables for colors as we want the styles to be easily adjustable. 
+ */
+:root {
+  --shape-size: 40px;
+  --shape-color: black;
+  --shape-background: #fc0;
+}
+
+.shape {
+  /*
+  Chose to go this way because CSS properties — like width and linear-gradient 
+  — do not accept <number> values. They accept <length> and <percentage> instead 
+  and have specific units in them, like % and px, em. Initially, the rating value is a float, 
+  which is a <number> type. Using this conversion helps ensure we can use the values in a number of ways.
+  */
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: var(--shape-size);
+  font-family: Times;
+  line-height: 1;
+}
+
+.shape::before {
+  letter-spacing: 3px;
+  /* linear-gradient background to create hard color stops where the gold-colored fill should end */
+  background: linear-gradient(
+    90deg,
+    var(--shape-background) var(--percent),
+    var(--shape-color) var(--percent)
+  );
+
+  /* 
+  clip the background to the shape of the text so that the background gradient takes the shape
+  The browser support for background clipping and text fills is pretty good. IE11 is the only holdout.
+   */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.star::before {
+  content: "★★★★★";
+}
+
+.circle::before {
+  content: "⬤⬤⬤⬤⬤";
+}

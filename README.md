@@ -27,18 +27,43 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Thought process for Rating Component
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I figured one can create star rating component in 5 ways.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Using an Image file
+2. Using a background Image
+3. Using SVG to draw the shape
+4. Using CSS to draw the shape
+5. Using Unicode symbols
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+When these methods are compared against each other the resulting comparison lokks like this:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+              ImageFiles	BackgroundImage	  SVG	     CSS-Shapes	   Unicode Symbols
+Accessibility	★★☆☆☆	      ★★★☆☆	           ★★★★★	      ★★★★★	           ★★★★★
+Management	  ★★★★☆	      ★★★★☆	           ★★☆☆☆	      ★★☆☆☆	           ★★☆☆☆
+Performance	  ★☆☆☆☆	      ★★☆☆☆	           ★★★★★	      ★★★★★	           ★★★★★
+Maintenance	  ★★★★☆	      ★★★☆☆	           ★★★★☆	      ★★☆☆☆	           ★★★★☆
+Overall	      ★★☆☆☆	      ★★★☆☆	           ★★★★☆	      ★★★☆☆	           ★★★★★
 
-## Learn More
+While using SVG(3) and Unicode Characters in pseudo-elements(5) are both great, I choose to develop using Unicode Symbols as I've never done that before and wanted to give that a try :). Also, with SVG there will be a slight maintainence overload of inlining them and referencing them and with Unicode the positioning could be tricky because of the use of pseudo elements. So If I am doing this for production purposes I would probably do it using SVG.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+How would I implement it SVG?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+<!-- Draw the star as a symbol and remove it from view -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="star" viewBox="214.7 0 182.6 792">
+    <!-- <path>s and whatever other shapes in here -->
+  </symbol>
+</svg>
+```
+
+```
+<!-- Then use anywhere and as many times as we want! -->
+<svg class="icon">
+  <use xlink:href="#star" />
+</svg>
+```
+
+Also, instead of hiding the reference element with css, In an ideal world, the first appearance would be the reference, and all consecutive appearances would use the original by reference.
