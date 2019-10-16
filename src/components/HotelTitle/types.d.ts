@@ -1,0 +1,3 @@
+type HotelTitleProps = {
+  title: string;
+};
