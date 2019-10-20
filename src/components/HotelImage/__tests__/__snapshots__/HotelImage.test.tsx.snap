@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render image 1`] = `
+<div>
+  <ul
+    class="MuiGridList-root makeStyles-gridList-1"
+    style="margin: -2px;"
+  >
+    <li
+      class="MuiGridListTile-root"
+      style="width: 50%; height: 184px; padding: 2px;"
+    >
+      <div
+        class="MuiGridListTile-tile"
+      >
+        <div
+          style="background-color: rgb(134, 53, 107); height: 300px; width: 500px;"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;
