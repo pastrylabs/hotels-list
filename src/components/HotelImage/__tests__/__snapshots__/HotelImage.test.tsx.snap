@@ -3,18 +3,19 @@
 exports[`Render image 1`] = `
 <div>
   <ul
-    class="MuiGridList-root makeStyles-gridList-1"
+    class="MuiGridList-root"
     style="margin: -2px;"
   >
     <li
-      class="MuiGridListTile-root"
+      class="MuiGridListTile-root makeStyles-root-1"
       style="width: 50%; height: 184px; padding: 2px;"
     >
       <div
         class="MuiGridListTile-tile"
       >
         <div
-          style="background-color: rgb(134, 53, 107); height: 300px; width: 500px;"
+          class="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-animate"
+          style="width: 100%; height: 100%;"
         />
       </div>
     </li>

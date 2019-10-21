@@ -1,4 +1,4 @@
-import React, { EventHandler } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -45,7 +45,7 @@ export default function SplitButton(props: {
 
   return (
     <Grid container direction="column" alignItems="flex-end">
-      <Grid item xs={12}>
+      <Grid item xs={10}>
         <ButtonGroup
           variant="contained"
           color="primary"

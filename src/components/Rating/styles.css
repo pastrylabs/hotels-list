@@ -2,8 +2,8 @@
  Using custom variables for colors as we want the styles to be easily adjustable. 
  */
 :root {
-  --shape-size: 40px;
-  --shape-color: black;
+  --shape-size: 30px;
+  --shape-color: lightgray;
   --shape-background: #fc0;
 }
 
