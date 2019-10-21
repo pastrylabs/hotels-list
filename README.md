@@ -62,3 +62,8 @@ How would I implement it SVG?
 ```
 
 Also, instead of hiding the reference element with css, In an ideal world, the first appearance would be the reference, and all consecutive appearances would use the original by reference.
+
+## Other notes
+
+1. Even though I love building components in isolation and testing them and iterating on them in isolation I haven't added any storybook stories purely because of time constraint.
+2. I tried to include comments as when I feel they are necessary
