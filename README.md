@@ -39,12 +39,7 @@ I figured one can create star rating component in 5 ways.
 
 When these methods are compared against each other the resulting comparison lokks like this:
 
-              ImageFiles	BackgroundImage	  SVG	     CSS-Shapes	   Unicode Symbols
-Accessibility	★★☆☆☆	      ★★★☆☆	           ★★★★★	      ★★★★★	           ★★★★★
-Management	  ★★★★☆	      ★★★★☆	           ★★☆☆☆	      ★★☆☆☆	           ★★☆☆☆
-Performance	  ★☆☆☆☆	      ★★☆☆☆	           ★★★★★	      ★★★★★	           ★★★★★
-Maintenance	  ★★★★☆	      ★★★☆☆	           ★★★★☆	      ★★☆☆☆	           ★★★★☆
-Overall	      ★★☆☆☆	      ★★★☆☆	           ★★★★☆	      ★★★☆☆	           ★★★★★
+![Comparison](https://user-images.githubusercontent.com/501335/67189003-2ace7f00-f439-11e9-9ef5-818000a62a23.png)
 
 While using SVG(3) and Unicode Characters in pseudo-elements(5) are both great, I choose to develop using Unicode Symbols as I've never done that before and wanted to give that a try :). Also, with SVG there will be a slight maintainence overload of inlining them and referencing them and with Unicode the positioning could be tricky because of the use of pseudo elements. So If I am doing this for production purposes I would probably do it using SVG.
 
